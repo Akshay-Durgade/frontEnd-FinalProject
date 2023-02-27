@@ -1,0 +1,13 @@
+body
+{
+    width:100vw;
+    height:100vh;
+    /* background-image: url(C:\CDAC\EFarmer\efarmer\public\Transaction.jpg); */
+    background-size: cover;
+    background-position:center;
+    
+}
+.container
+{
+    color:white;
+}
