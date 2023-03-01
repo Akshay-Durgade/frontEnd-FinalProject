@@ -27,6 +27,9 @@ export function NavigationBar() {
                             <LinkContainer to={'/cropStatusFarmer'}>
                                 <Nav.Link>Crop Status</Nav.Link>
                             </LinkContainer>
+                            <LinkContainer to={'/login1'}>
+                                <Nav.Link>Login</Nav.Link>
+                            </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
