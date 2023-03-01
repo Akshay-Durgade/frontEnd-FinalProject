@@ -28,7 +28,10 @@ export function NavigationBar() {
                                 <Nav.Link>Crop Status</Nav.Link>
                             </LinkContainer>
                             <LinkContainer to={'/login1'}>
-                                <Nav.Link>Login</Nav.Link>
+                                <Nav.Link>Login1</Nav.Link>
+                            </LinkContainer>
+                            <LinkContainer to={'/addCrop'}>
+                                <Nav.Link>Add Crop</Nav.Link>
                             </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
