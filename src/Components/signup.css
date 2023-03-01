@@ -42,3 +42,8 @@ form {
   button[type='submit']:hover {
     background-color: #3e8e41;
   }
+
+  .text-color-o
+  {
+    color: black;
+  }

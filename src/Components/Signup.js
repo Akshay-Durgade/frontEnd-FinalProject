@@ -5,7 +5,7 @@ function Signup() {
     <>
       <div>
         <h1 className="mt-2">Registration</h1>
-        <form>
+        <form className="text-color-o">
           <label for="name text-start">Name:</label>
           <input type="text" id="name" name="name" required />
 
