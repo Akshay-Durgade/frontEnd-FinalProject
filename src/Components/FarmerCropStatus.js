@@ -1,5 +1,21 @@
+import { useEffect, useState } from "react"
+import { getAllCropList } from "../Services/EFarmerApiService";
 import "./FarmerCropStatus.css"
 export function FarmerCropStatus() {
+
+  let [cropList,setCropList]= useState([]);
+  let id=2;
+  async function getCropList(id)
+  {
+    var response=await getAllCropList(id);
+    setCropList(response.data);
+    console.log(response.data);
+    console.log(response.data[3].customerid);
+  }
+
+  useEffect(() => {
+    getCropList(id);
+  },[])
   return (
     <>
     <div className="bgp1">
@@ -18,60 +34,22 @@ export function FarmerCropStatus() {
             </tr>
           </thead>
           <tbody className="text-white">
-            <tr>
-              <th scope="row">1</th>
-              <td>Tomato</td>
-              <td>1000</td>
-              <td>80</td>
-              <td>{1000*80}</td>
-              <td>Accepted</td>
-              <td>Sold</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Pomergranate</td>
-              <td>100</td>
-              <td>110</td>
-              <td>{100*110}</td>
-              <td>Accepted</td>
-              <td>Sold</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Ginger</td>
-              <td>50</td>
-              <td>30</td>
-              <td>{50*30}</td>
-              <td>Accepted</td>
-              <td>Sold</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Carrot</td>
-              <td>30</td>
-              <td>50</td>
-              <td>{30*50}</td>
-              <td>Accepted</td>
-              <td>Sold</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Tomato</td>
-              <td>100</td>
-              <td>80</td>
-              <td>{100*80}</td>
-              <td>Accepted</td>
-              <td>Sold</td>
-            </tr>
-            <tr>
-              <th scope="row">1</th>
-              <td>Tomato</td>
-              <td>1000</td>
-              <td>80</td>
-              <td>{1000*80}</td>
-              <td>Accepted</td>
-              <td>Sold</td>
-            </tr>
+            {cropList.map((item) => {
+              return(
+                <tr>
+                <th scope="row">{item.cropID}</th>
+                <td>{item.cropName}</td>
+                <td>{item.weight}</td>
+                <td>{item.price}</td>
+                <td>{item.weight * item.price}</td>
+                <td>{item.status}</td>
+                {
+                  item.customerid===0?(<td>Unsold</td>):(<td>Sold</td>)
+                }
+              </tr>
+              );
+            })}
+            
           </tbody>
         </table>
       </div>

@@ -8,3 +8,8 @@ export function addCrop(id,cropToSell)
     console.log();
     return axios.post(`${BASE_URL}/addCrop/${id}`,cropToSell);
 }
+
+export function getAllCropList(id)
+{
+    return axios.get(`${BASE_URL}/getAllCropList/${id}`);
+}
