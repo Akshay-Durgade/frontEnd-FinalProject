@@ -1,6 +1,5 @@
 import ".//SignUp1.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
 export function Login1() {
   return (
     <>

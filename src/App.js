@@ -11,6 +11,8 @@ import Login from "./Components/Login";
 import { CropStatusFamer } from "./Components/CropStatusFarmer";
 import { FarmerCropStatus } from "./Components/FarmerCropStatus";
 import { Login1 } from "./Components/Login1";
+import { AddCrop } from "./Components/AddCrop";
+
 function App() {
   return (
     <>
@@ -25,6 +27,7 @@ function App() {
             <Route path="/adminCropTable" element={<CropStatusFamer></CropStatusFamer>}></Route>
             <Route path="/cropStatusFarmer" element={<FarmerCropStatus></FarmerCropStatus>}></Route>
             <Route path="/login1" element={<Login1></Login1>}></Route>
+            <Route path="/addCrop" element={<AddCrop></AddCrop>}></Route>
           </Routes>
           <Footer></Footer>
         </BrowserRouter>
